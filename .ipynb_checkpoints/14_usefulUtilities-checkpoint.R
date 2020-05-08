@@ -34,7 +34,7 @@ bitr_kegg("Z5100", fromType="kegg", toType='ncbi-proteinid', organism='ece')
 bitr_kegg("Z5100", fromType="kegg", toType='uniprot', organism='ece')
 
 #' 14.2 setReadable: translating gene IDs to human readable symbols
-#'
+#' 
 library(org.Hs.eg.db)
 library(clusterProfiler)
 

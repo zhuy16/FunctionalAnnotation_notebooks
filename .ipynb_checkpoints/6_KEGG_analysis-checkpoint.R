@@ -1,5 +1,5 @@
 #' Chapter 6 KEGG analysis
-#'
+#' 
 library(clusterProfiler)
 search_kegg_organism('ece', by='kegg_code')
 
@@ -19,7 +19,7 @@ kk <- enrichKEGG(gene         = gene,
 head(kk)
 
 #' 6.2 KEGG Gene Set Enrichment Analysis
-#'
+#' 
 kk2 <- gseKEGG(geneList     = geneList,
                organism     = 'hsa',
                nPerm        = 1000,
@@ -34,9 +34,7 @@ mkk <- enrichMKEGG(gene = gene,
                    organism = 'hsa')
 
 #' 6.4 KEGG Module Gene Set Enrichment Analysis
-#'
+#' 
 mkk2 <- gseMKEGG(geneList = geneList,
                  organism = 'hsa')
-
-
 

@@ -5,25 +5,25 @@ data(geneList)
 de = names(geneList)[1:100]
 x = enrichDO(de)
 
-#'
+#' 
 #' 13.1 filter
-#'
+#' 
 library(clusterProfiler.dplyr)
 
 filter(x, p.adjust < .05, qvalue < 0.2)
 
 #' 13.2 arrange
-#'
-#'
+#' 
+#' 
 mutate(x, geneRatio = parse_ratio(GeneRatio)) %>%
   arrange(desc(geneRatio))
 
 #' 13.3 select
-#'
+#' 
 select(x, -geneID) %>% head
 
 #' 13.4 mutate
-#'
+#' 
 y <- mutate(x, richFactor = Count / as.numeric(sub("/\\d+", "", BgRatio)))
 y
 
@@ -67,7 +67,7 @@ ggplot(y, aes(NES, fct_reorder(Description, NES), fill=qvalues), showCategory=10
 
 
 #' 13.6 summarise
-#'
+#' 
 pi=seq(0, 1, length.out=11)
 
 mutate(x, pp = cut(pvalue, pi)) %>%

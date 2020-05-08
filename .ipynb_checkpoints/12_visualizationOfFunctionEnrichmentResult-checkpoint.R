@@ -1,5 +1,5 @@
 #' 12.1 Bar Plot
-#'
+#' 
 library(DOSE)
 data(geneList)
 de <- names(geneList)[abs(geneList) > 2]
@@ -10,15 +10,10 @@ library(enrichplot)
 barplot(edo, showCategory=20)
 
 #' 12.2 Dot plot
-#'
-edo2 <- gseNCG(geneList)#, nPerm=10000)
-
-head(edo2)
-
+#' 
+edo2 <- gseNCG(geneList, nPerm=10000)
 p1 <- dotplot(edo, showCategory=30) + ggtitle("dotplot for ORA")
-
 p2 <- dotplot(edo2, showCategory=30) + ggtitle("dotplot for GSEA")
-
 plot_grid(p1, p2, ncol=2)
 
 
@@ -40,12 +35,12 @@ p4 <- cnetplot(edox, node_label="none")
 cowplot::plot_grid(p1, p2, p3, p4, ncol=2, labels=LETTERS[1:4])
 
 #' 12.4 Heatmap-like functional classification
-#'
+#' 
 p1 <- heatplot(edox)
 p2 <- heatplot(edox, foldChange=geneList)
 cowplot::plot_grid(p1, p2, ncol=1, labels=LETTERS[1:2])
 #' 12.5 Enrichment Map
-#'
+#' 
 p1 <- emapplot(edo)
 p2 <- emapplot(edo, pie_scale=1.5)
 p3 <- emapplot(edo,layout="kk")
@@ -66,7 +61,7 @@ cowplot::plot_grid(p1, p2, p3, p4, ncol=2, labels=LETTERS[1:4])
 
 
 #' 12.6 UpSet Plot
-#'
+#' 
 BiocManager::install("ggupset")
 upsetplot(edo)
 
@@ -127,19 +122,11 @@ goplot(ego)
 browseKEGG(kk, 'hsa04110')
 
 #' 12.12 pathview from pathview package
-#'
+#' 
 library("pathview")
 library("pathview")
 hsa04110 <- pathview(gene.data  = geneList,
                      pathway.id = "hsa04110",
                      species    = "hsa",
                      limit      = list(gene=max(abs(geneList)), cpd=1))
-
-
-
-
-
-
-
-
 

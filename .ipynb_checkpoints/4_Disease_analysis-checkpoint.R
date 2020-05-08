@@ -1,7 +1,7 @@
 #' Chapter 4 Disease analysis
-#'
+#' 
 #' 4.1 enrichDO function
-#'
+#' 
 library(DOSE)
 data(geneList)
 gene <- names(geneList)[abs(geneList) > 1.5]
@@ -22,13 +22,13 @@ x <- setReadable(x, 'org.Hs.eg.db')
 head(x)
 
 #' 4.2 enrichNCG function
-#'
+#' 
 gene2 <- names(geneList)[abs(geneList) < 3]
 ncg <- enrichNCG(gene2)
 head(ncg)
 
 #' 4.3 enrichDGN and enrichDGNv functions
-#'
+#' 
 
 dgn <- enrichDGN(gene)
 head(dgn)
@@ -41,7 +41,7 @@ dgnv <- enrichDGNv(snp)
 head(dgnv)
 
 #' 4.4 gseDO fuction
-#'
+#' 
 library(DOSE)
 data(geneList)
 y <- gseDO(geneList,
@@ -53,7 +53,7 @@ y <- gseDO(geneList,
 head(y, 3)
 
 #' 4.5 gseNCG fuction
-#'
+#' 
 ncg <- gseNCG(geneList,
               nPerm         = 100,
               minGSSize     = 120,
@@ -64,7 +64,7 @@ ncg <- setReadable(ncg, 'org.Hs.eg.db')
 head(ncg, 3)
 
 #' 4.6 gseDGN fuction
-#'
+#' 
 dgn <- gseDGN(geneList,
               nPerm         = 100,
               minGSSize     = 120,

@@ -1,6 +1,3 @@
-#library(magrittr)
-library(clusterProfiler)
-
 data(gcSample)
 lapply(gcSample, head)
 ck <- compareCluster(geneCluster = gcSample, fun = "enrichKEGG")

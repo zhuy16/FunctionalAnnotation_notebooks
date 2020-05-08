@@ -1,13 +1,10 @@
 #' Chapter 5 Gene Ontology Analysis
 #' 5.1 Supported organisms
-#'
+#' 
 #' 5.2 GO classification
 #'
 library(clusterProfiler)
 data(geneList, package="DOSE")
-
-library(org.Hs.eg.db)
-
 gene <- names(geneList)[abs(geneList) > 2]
 gene.df <- bitr(gene, fromType = "ENTREZID",
                 toType = c("ENSEMBL", "SYMBOL"),
@@ -23,7 +20,7 @@ ggo <- groupGO(gene     = gene,
 head(ggo)
 
 #' 5.3 GO over-representation test
-#'
+#' 
 
 ego <- enrichGO(gene          = gene,
                 universe      = names(geneList),
