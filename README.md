@@ -1,4 +1,4 @@
-# clusterProfiler
+# clusterProfiler_notebooks
 
 #### This repo is for functional annotation and visualization of gene sets. 
 
