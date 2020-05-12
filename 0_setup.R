@@ -34,7 +34,7 @@ install.packages("yunhua/DOSE_3.14.0.tar.gz", repos = NULL, type="source")
 packageVersion("DOSE")   
 devtools::install_github('https://github.com/YuLab-SMU/clusterProfiler',dependencies = T)
 devtools::install_github("GuangchuangYu/enrichplot")
-
+devtools::install_github("GuangchuangYu/doseplot")
 
 # packageVersion("AnnotationDbi")
 # [1] ‘1.44.0’
