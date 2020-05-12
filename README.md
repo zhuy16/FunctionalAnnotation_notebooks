@@ -1,8 +1,8 @@
 # clusterProfiler
 
-This repo is for functional annotation and visualization of gene sets. 
+#### This repo is for functional annotation and visualization of gene sets. 
 
-These include Gene Ontology, KEGG, Wikipath, Disease Ontology, GSEA etc. 
+These include **Gene Ontology, KEGG, Wikipath, Disease Ontology, GSEA etc.** 
 
 Originally these codes are from a R book written by Guangchuang Yu from Hongkang.
 https://yulab-smu.github.io/clusterProfiler-book/index.html
