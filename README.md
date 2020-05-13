@@ -1,6 +1,8 @@
 # clusterProfiler_notebooks
 
-#### This repo is for functional annotation and visualization of gene sets. 
+#### This repo is for functional annotation and visualization of gene sets.
+
+"Functional annotation" implies that finding the biological meaning of the gene set you obtained from your analysis.
 
 These include **Gene Ontology, KEGG, Wikipath, Disease Ontology, GSEA etc.** 
 
