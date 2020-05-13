@@ -6,7 +6,7 @@
 
 These include **Gene Ontology, KEGG, Wikipath, Disease Ontology, GSEA etc.** 
 
-**** You will see the codes and result table and plots from the Jupyter Notebooks in the notebook folder.
+#### You will see the codes and result table and plots from the Jupyter Notebooks in the notebook folder.
 
 Originally these codes are from a R book written by Guangchuang Yu from Hongkang.
 https://yulab-smu.github.io/clusterProfiler-book/index.html
