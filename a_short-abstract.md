@@ -28,6 +28,7 @@ groupGO
 
 B these functionns are rank based GSEA test, you will use a whole ranked list of fold-change values, with the names of the list as genes. You don't need p-value to start with and don't need a cut off. 
 ```
+GSEA
 gseKEGG
 gseMKEGG
 gseGO
