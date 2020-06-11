@@ -47,6 +47,19 @@ library(msigdbr)
 m_t2g <- msigdbr(species = "Homo sapiens", category = "C2") %>% 
   dplyr::select(gs_name, gene_symbol)
 ```
+or for cell markers, from this human cell marker database
+```
+cell_markers <- vroom::vroom('http://bio-bigdata.hrbmu.edu.cn/CellMarker/download/Human_cell_markers.txt') %>%
+   tidyr::unite("cellMarker", tissueType, cancerType, cellName, sep=", ") %>% 
+   dplyr::select(cellMarker, geneID) %>%
+   dplyr::mutate(geneID = strsplit(geneID, ', '))
+cell_markers
+```
+or for wikipathways, use the [rWikiPathway package](https://bioconductor.org/packages/release/bioc/manuals/rWikiPathways/man/rWikiPathways.pdf)
+
+or for KEGG, the program automatically download from the site. specify the organism = "hsa" or "ko" etc.
+[KEGG](http://www.genome.jp/kegg/catalog/org_list.html) or [KEGG Module](http://www.genome.jp/kegg/module.html)
+
 ### III, visualization of the results
 ```
 # barplot
