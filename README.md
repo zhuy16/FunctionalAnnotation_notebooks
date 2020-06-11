@@ -6,6 +6,9 @@
 
 These include **Gene Ontology, KEGG, Wikipath, Disease Ontology, GSEA etc.** 
 
+For a more structural grasp of what this package does, I have formulated a short abstraction/introduction.
+**a_short_abstract.md**
+
 #### You will see the codes and result tables and plots from the Jupyter Notebooks in the notebook folder.
 
 Originally these codes are from a R book written by Guangchuang Yu from Hongkang.
