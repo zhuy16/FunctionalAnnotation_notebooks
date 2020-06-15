@@ -21,7 +21,7 @@ The notebook folder contains all the essential notebooks, and the R folder conta
 The original Repo is https://github.com/YuLab-SMU/clusterProfiler. 
 
 
-result visualizations: [<img src="./clusterProfilerSamplePlot.png">](./plots/clusterProfilerSamplePlots.pdf)
+result visualizations: [<img src="./plots/clusterProfilerSamplePlots.pdf">](./plots/clusterProfilerSamplePlots.pdf)
 
 [**A_summary_chart**](./clusterProfilerFunction.pdf)
 <img src="./clusterProfilerFunction.png">
