@@ -1,0 +1,34 @@
+Function,Library,databaseUsed,Input (demonstrated examples),Sample Configuration
+enricher,clusterProfiler,msigdbr/wiki-download/others,vectorOfGenes,"enricher(gene, TERM2GENE = wpid2gene, TERM2NAME = wpid2name)"
+enrichKEGG,clusterProfiler,organism='hsa',vectorOfGenes,"enrichKEGG(gene=gene,organism='hsa',pvalueCutoff=0.05)"
+enrichMKEGG,clusterProfiler,organism='hsa',vectorOfGenes,"enrichMKEGG(gene = gene,organism = 'hsa')"
+enrichGO,clusterProfiler,OrgDb=org.Hs.eg.db,vectorOfGenes,"enrichGO(gene=gene,universe=names(geneList),OrgDb=org.Hs.eg.db,ont=""CC"",pAdjustMethod=""BH"",pvalueCutoff=0.01,qvalueCutoff=0.05,readable=TRUE)"
+enrichPathway,ReactomePA ,automatic,vectorOfGenes,
+enrichMeSH,ReactomePA ,"MeSHDb=""Mesh.Hsa.eg.db""",vectorOfGenes,"enrichMeSH(de, MeSHDb = **""MeSH.Hsa.eg.db""**, database='gendoo', category = 'C')"
+enrichDO,DOSE,"ont=""DO'",vectorOfGenes,"enrichDO(gene=gene,ont=""DO"",pvalueCutoff=0.05,pAdjustMethod=""BH"",universe=names(geneList),minGSSize=5,maxGSSize=500,qvalueCutoff=0.05,readable=FALSE)"
+enrichNCG,DOSE,automatic,vectorOfGenes,
+enrichDGN,DOSE,automatic,vectorOfGenes,enrichDGN(gene)
+enrichDGNv,DOSE,automatic,vectorOfGenes,enrichDGNv(snp)
+groupGO,clusterProfiler,OrgDb=org.Hs.eg.db,vectorOfGenes,"groupGO(gene= gene,OrgDb= org.Hs.eg.db,ont= ""CC"",level= 3,universe= names(geneList),readable = TRUE)"
+GSEA,clusterProfiler,msigdbr/wiki-download/others,NamedVectorOfFoldchange,"GSEA(geneList, TERM2GENE = wpid2gene, TERM2NAME = wpid2name, verbose=FALSE)"
+gseKEGG,clusterProfiler,organism='hsa',NamedVectorOfFoldchange,"gseKEGG(geneList=geneList,organism='mcc',nPerm=1000,minGSSize=120,pvalueCutoff=0.05,verbose=FALSE)"
+gseMKEGG,clusterProfiler,organism='hsa',NamedVectorOfFoldchange,
+gseGO,clusterProfiler,OrgDb=org.Hs.eg.db,NamedVectorOfFoldchange,"gseGO(geneList=geneList,OrgDb=org.Hs.eg.db,ont=""CC"",nPerm=1000,minGSSize=100,maxGSSize=500,pvalueCutoff=0.05,verbose=FALSE)"
+gsePathway,ReactomePA ,?,NamedVectorOfFoldchange,
+gseMeSH,ReactomePA ,"MeSHDb=""Mesh.Hsa.eg.db""",NamedVectorOfFoldchange,"gseMeSH(geneList, MeSHDb = ""MeSH.Hsa.eg.db"", database = 'gene2pubmed', category = ""G"")"
+gseDO,DOSE,"ont=""DO'",NamedVectorOfFoldchange,"gseDO(geneList,nPerm=100,minGSSize=120,pvalueCutoff=0.2,pAdjustMethod=""BH"",verbose=FALSE)"
+gseNCG,DOSE,automatic,NamedVectorOfFoldchange,"gseNCG(geneList,nPerm=100,minGSSize=120,pvalueCutoff=0.2,pAdjustMethod=""BH"",verbose=FALSE)"
+gseDGN,DOSE,automatic,NamedVectorOfFoldchange,"gseDGN(geneList,nPerm=100,minGSSize=120,pvalueCutoff=0.2,pAdjustMethod=""BH"",verbose=FALSE)"
+,,,,
+get .gmt files,msigdbr,no,species & category,"msigdbr(species = ""Homo sapiens"", category = ""C2"") %>% dplyr::select(gs_name, gene_symbol) or read.gmt(""./wikipathways-20200510-gmt-Homo_sapiens.gmt"")"
+bitr,clusterProfiler,no,avector of gene ids,"bitr(wpid2gene$gene,fromType=""ENTREZID"",toType=c(""ENSEMBL"",""SYMBOL""),OrgDb=org.Hs.eg.db)"
+Visulization,,,,
+barplot,graphics,no,enrichResult,"barplot(enricherRes, showCategory=20)"
+dotplot,enrichplot,no,"enrichRseult, gseaResult & compareClusterResult","dotplot(edo2, showCategory=30) + ggtitle(""dotplot for GSEA"") && plot_grid(p1, p2, ncol=2)"
+cnetplot,enrichplot,no,enrichResult,"options(repr.plot.width=16, repr.plot.height=24) && cnetplot(edox, foldChange=geneList, showCategory = 10,colorEdge=TRUE,circular=TRUE, node_label=""all"")"
+upsetplot,enrichplot,no,enrichRseult and gseaResult,upsetplot(kk2)
+ridgeplot,enrichplot,no,gseaResult,ridgeplot(edo2)
+gseaplot,enrichplot,no,gseaResult,"gseaplot2(edo2, geneSetID = 2, title = edo2$Description[2]) # geneSetID are the row number in the edo2 object"
+Multiple category,,,,
+compareCluster,clusterProfiler,automatic,list of gene sets/ genes with different factor labels,"formula_res <- compareCluster(Entrez~group+othergroup, data=mydf, fun=""enrichKEGG""); ck <- compareCluster(geneCluster = gcSample, fun = ""enrichKEGG"")"
+emapplot,enrichplot,no,compareClusterResult,"options(repr.plot.width=8, repr.plot.height=6) && emapplot(xx,pie=""count"", pie_scale=2, layout=""kk"",legend_n=4)ridgeplot(edo2) # show the fold change of core genes in the GSEA analysis."
