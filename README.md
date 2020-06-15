@@ -19,3 +19,9 @@ For my own convinience I converted it to jupyter notebooks for easy reporting an
 **The 0_setup.R, inculdes all the packages to be installed to run these notebooks.** 
 The notebook folder contains all the essential notebooks, and the R folder contains all the codes copied from the original R book. 
 The original Repo is https://github.com/YuLab-SMU/clusterProfiler. 
+
+
+result visualizations: <img src="./clusterProfilerSamplePlots.png">
+
+[**A_summary_chart**](./clusterProfilerFunction.pdf)
+<img src="./clusterProfilerFunction.png">
