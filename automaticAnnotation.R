@@ -2,7 +2,7 @@
 ## fc is a vector of fold change values of all genes, named each value with it's gene ID (not as a symbl, but as 'ENTREZID')
 ## then you can run this function below for GSEA tests:
 
-FuncAnno=function(fc){
+FuncAnnoGSEA=function(fc){
     cutoff=1
 # 1. KEGG
     #' 
@@ -65,10 +65,12 @@ FuncAnno=function(fc){
     return(enrichList)
 }
 
+
 # for a complete task including GO enrichments, here is another function.
 ## in this case the 'de_file' is a list of 3 items. the 2nd and 3rd item are used here. 
 ## the 2nd element is the fc vector as on the top. 
 ## the 3rd item is data frame containing all the differentially expressed genes (symbls) as the rowname. 
+
 FuncAnn=function(de_file){ 
     de2gse=readRDS(de_file)
     #de_file
